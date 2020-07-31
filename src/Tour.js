@@ -67,8 +67,9 @@ function Tour({
     ...accessibilityOptions,
   }
 
-  const current = typeof goToStep === 'number' ? goToStep : cur;
-  const setCurrent = typeof getCurrentStep === 'function' ? getCurrentStep : setCur;
+  const current = typeof goToStep === 'number' ? goToStep : cur
+  const setCurrent =
+    typeof getCurrentStep === 'function' ? getCurrentStep : setCur
 
   useMutationObserver(observer, (mutationList, observer) => {
     if (isOpen) {
@@ -130,7 +131,7 @@ function Tour({
 
   useEffect(() => {
     setTimeout(showStep, updateDelay)
-  }, [update, updateDelay]);
+  }, [update, updateDelay])
 
   function keyHandler(e) {
     e.stopPropagation()
