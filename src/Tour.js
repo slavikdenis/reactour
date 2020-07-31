@@ -56,6 +56,7 @@ function Tour({
   goToStep,
   update,
   updateDelay,
+  badgeContent,
 }) {
   const [cur, setCur] = useState(0)
   const [started, setStarted] = useState(false)
