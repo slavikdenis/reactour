@@ -224,7 +224,9 @@ function Tour({
         makeCalculations(nodeRect, step.position)
       }
     } else {
-      const { width: helperWidth, height: helperHeight } = getNodeRect(helper.current);
+      const { width: helperWidth, height: helperHeight } = getNodeRect(
+        helper.current
+      )
       dispatch({
         type: 'NO_DOM_NODE',
         helperPosition: step.position,
@@ -233,7 +235,7 @@ function Tour({
         inDOM: false,
         helperWidth,
         helperHeight,
-        helper: helper.current
+        helper: helper.current,
       })
     }
 
