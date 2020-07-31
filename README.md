@@ -15,24 +15,20 @@
 
 <br />
 
-> ⚠️ The `master` branch is currently in _development_. Please use the [v1 branch](https://github.com/elrumordelaluz/reactour/tree/v1) to follow the current versions published.
-
-<br />
-
 ## Install
 
 ```zsh
-npm i -S reactour
+npm i -S @slavikdenis/reactour
 # or
-yarn add reactour
+yarn add @slavikdenis/reactour
 ```
 
-<small>From `v1.9.1` [styled-components](https://www.styled-components.com/) it isn't bundled into the package and is required `styled-components@^4` and `react@^16.3` due to the use of [createRef](https://reactjs.org/docs/refs-and-the-dom.html#creating-refs), so: </small>
+<small>From `v1.9.1` `react@^16.3` is required due to the use of [createRef](https://reactjs.org/docs/refs-and-the-dom.html#creating-refs), so: </small>
 
 ```zsh
-npm i -S styled-components@^4.0.0
+npm i -S @emotion/core @emotion/styled
 # or
-yarn add styled-components@^4.0.0
+yarn add @emotion/core @emotion/styled
 ```
 
 ## Usage
@@ -41,7 +37,7 @@ Add the `Tour` Component in your Application, passing the `steps` with the eleme
 
 ```js
 import React from 'react'
-import Tour from 'reactour'
+import Tour from '@slavikdenis/reactour'
 
 class App extends Component {
   // ...
@@ -83,6 +79,7 @@ Default: `#007aff`
 Type: `object`
 
 Default:
+
 ```js
     // attribute to associate the dialog with a title for screen readers
     ariaLabelledBy: null,
@@ -154,7 +151,9 @@ Type: `func`
 
 ```js
 // example
-<Tour getCurrentStep={curr => console.log(`The current step is ${curr + 1}`)} />
+<Tour
+  getCurrentStep={(curr) => console.log(`The current step is ${curr + 1}`)}
+/>
 ```
 
 #### goToStep
@@ -228,7 +227,7 @@ Type: `func`
 
 ```js
 // example
-<Tour onAfterOpen={target => (document.body.style.overflowY = 'hidden')} />
+<Tour onAfterOpen={(target) => (document.body.style.overflowY = 'hidden')} />
 ```
 
 #### onBeforeClose
@@ -239,7 +238,7 @@ Type: `func`
 
 ```js
 // example
-<Tour onBeforeClose={target => (document.body.style.overflowY = 'auto')} />
+<Tour onBeforeClose={(target) => (document.body.style.overflowY = 'auto')} />
 ```
 
 #### onRequestClose
@@ -379,7 +378,7 @@ const steps = [
     position: 'top',
     // you could do something like:
     // position: [160, 250],
-    action: node => {
+    action: (node) => {
       // by using this, focus trap is temporary disabled
       node.focus()
       console.log('yup, the target element is also focused!')
