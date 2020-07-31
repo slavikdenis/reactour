@@ -52,6 +52,7 @@ function Tour({
   maskSpace,
   showCloseButton,
   accessibilityOptions,
+  getCurrentStep,
 }) {
   const [current, setCurrent] = useState(0)
   const [started, setStarted] = useState(false)
@@ -120,6 +121,10 @@ function Tour({
       window.removeEventListener('resize', debouncedShowStep)
     }
   }, [current, isOpen])
+
+  useEffect(() => {
+    getCurrentStep?.(current);
+  }, [current]);
 
   function keyHandler(e) {
     e.stopPropagation()
