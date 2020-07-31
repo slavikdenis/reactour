@@ -55,6 +55,7 @@ function Tour({
   getCurrentStep,
   goToStep,
   update,
+  updateDelay,
 }) {
   const [cur, setCur] = useState(0)
   const [started, setStarted] = useState(false)
@@ -128,10 +129,8 @@ function Tour({
   }, [current, isOpen])
 
   useEffect(() => {
-    if (update) {
-      showStep();
-    }
-  }, [update]);
+    setTimeout(showStep, updateDelay)
+  }, [update, updateDelay]);
 
   function keyHandler(e) {
     e.stopPropagation()
