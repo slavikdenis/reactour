@@ -53,8 +53,9 @@ function Tour({
   showCloseButton,
   accessibilityOptions,
   getCurrentStep,
+  goToStep,
 }) {
-  const [current, setCurrent] = useState(0)
+  const [cur, setCur] = useState(0)
   const [started, setStarted] = useState(false)
   const [state, dispatch] = useReducer(reducer, initialState)
   const helper = useRef(null)
@@ -63,6 +64,9 @@ function Tour({
     ...defaultProps.accessibilityOptions,
     ...accessibilityOptions,
   }
+
+  const current = typeof goToStep === 'number' ? goToStep : cur;
+  const setCurrent = typeof getCurrentStep === 'function' ? getCurrentStep : setCur;
 
   useMutationObserver(observer, (mutationList, observer) => {
     if (isOpen) {
@@ -121,10 +125,6 @@ function Tour({
       window.removeEventListener('resize', debouncedShowStep)
     }
   }, [current, isOpen])
-
-  useEffect(() => {
-    getCurrentStep?.(current);
-  }, [current]);
 
   function keyHandler(e) {
     e.stopPropagation()
