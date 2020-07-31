@@ -175,11 +175,11 @@ function Tour({
   }
 
   function nextStep() {
-    setCurrent((prev) => (prev < steps.length - 1 ? prev + 1 : prev))
+    setCurrent(current < steps.length - 1 ? current + 1 : current)
   }
 
   function prevStep() {
-    setCurrent((prev) => (prev > 0 ? prev - 1 : prev))
+    setCurrent(current > 0 ? current - 1 : current)
   }
 
   function goTo(step) {
