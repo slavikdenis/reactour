@@ -130,7 +130,7 @@ function Tour({
   }, [current, isOpen])
 
   useEffect(() => {
-    setTimeout(showStep, updateDelay)
+    setTimeout(() => helper.current && showStep(), updateDelay)
   }, [update, updateDelay])
 
   function keyHandler(e) {
