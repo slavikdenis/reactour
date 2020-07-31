@@ -1,10 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Shake } from 'reshake'
+import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 
 const LogoWrapper = styled.div`
-  font-size: ${props => (props.size ? props.size : '70vw')};
+  font-size: ${(props) => (props.size ? props.size : '70vw')};
   width: 1em;
   display: inline-block;
   max-width: 430px;
@@ -22,7 +21,7 @@ export default function Logo({ iso = true, ...props }) {
         <g data-tut="reactour__logo">
           <circle fill="#5CB7B7" cx="182" cy="182" r="182" />
           <circle fill="#1C8F9E" cx="182" cy="182" r="158.2" />
-          <Shake elem="g" dur={10000} int={4} h={0} v={5} r={3} max={70} fixed>
+          <g>
             <path
               opacity=".2"
               fill="#FFF"
@@ -68,7 +67,7 @@ export default function Logo({ iso = true, ...props }) {
               cy="235.6"
               r="16.7"
             />
-          </Shake>
+          </g>
         </g>
         {iso && (
           <g data-tut="reactour__iso">

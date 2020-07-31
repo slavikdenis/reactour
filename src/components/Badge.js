@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const Badge = styled.span`
   position: absolute;
   font-family: monospace;
   background: var(--reactour-accent);
-  background: ${props => props.accentColor};
+  background: ${(props) => props.accentColor};
   height: 1.875em;
   line-height: 2;
   padding-left: 0.8125em;

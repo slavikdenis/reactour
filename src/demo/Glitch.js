@@ -1,4 +1,5 @@
-import styled, { keyframes } from 'styled-components'
+import styled from '@emotion/styled'
+import { keyframes } from '@emotion/core'
 import { fontFamily } from './settings'
 
 // from http://codepen.io/lbebber/pen/ypgql?editors=0100

@@ -66,7 +66,7 @@ function Tour({
   useMutationObserver(observer, (mutationList, observer) => {
     if (isOpen) {
       showStep()
-      mutationList.forEach(mutation => {
+      mutationList.forEach((mutation) => {
         if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
           setTimeout(
             () => makeCalculations(getNodeRect(mutation.addedNodes[0])),
@@ -163,11 +163,11 @@ function Tour({
   }
 
   function nextStep() {
-    setCurrent(prev => (prev < steps.length - 1 ? prev + 1 : prev))
+    setCurrent((prev) => (prev < steps.length - 1 ? prev + 1 : prev))
   }
 
   function prevStep() {
-    setCurrent(prev => (prev > 0 ? prev - 1 : prev))
+    setCurrent((prev) => (prev > 0 ? prev - 1 : prev))
   }
 
   function goTo(step) {
@@ -204,7 +204,7 @@ function Tour({
           context: isBody(parentScroll) ? window : parentScroll,
           duration: scrollDuration,
           offset,
-          callback: _node => {
+          callback: (_node) => {
             makeCalculations(getNodeRect(_node), step.position)
           },
         })

@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import SvgButton from './SvgButton'
 import PropTypes from 'prop-types'
 
@@ -47,10 +47,10 @@ Arrow.propTypes = {
 }
 
 export default styled(Arrow)`
-  color: ${props => (props.disabled ? '#caccce' : '#646464')};
+  color: ${(props) => (props.disabled ? '#caccce' : '#646464')};
 
-  ${props => (props.inverted ? 'margin-left: 24px;' : 'margin-right: 24px;')};
-  ${props =>
+  ${(props) => (props.inverted ? 'margin-left: 24px;' : 'margin-right: 24px;')};
+  ${(props) =>
     !props.label &&
     `
     width: 16px;
@@ -59,6 +59,6 @@ export default styled(Arrow)`
   `};
 
   &:hover {
-    color: ${props => (props.disabled ? '#caccce' : '#000')};
+    color: ${(props) => (props.disabled ? '#caccce' : '#000')};
   }
 `

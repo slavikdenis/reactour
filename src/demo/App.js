@@ -37,8 +37,8 @@ function App() {
     return () => window.removeEventListener('keyup', keyHandling)
   }, [isTourOpen, customComps])
 
-  const disableBody = target => disableBodyScroll(target)
-  const enableBody = target => enableBodyScroll(target)
+  const disableBody = (target) => disableBodyScroll(target)
+  const enableBody = (target) => enableBodyScroll(target)
   const accentColor = 'linear-gradient(to right, #1c8f9e, #5cb7b7)'
   return (
     <>
@@ -123,7 +123,7 @@ function MyCustomHelper({ current, content, totalSteps, gotoStep, close }) {
   )
 }
 
-const timeout = ms => new Promise(res => setTimeout(res, ms))
+const timeout = (ms) => new Promise((res) => setTimeout(res, ms))
 
 const tourConfig = [
   {
@@ -249,7 +249,7 @@ const tourConfig = [
     content:
       'And the Tour could be observing changes to update the view, try clicking the button…',
     observe: '[data-tut="reactour__state--observe"]',
-    action: node => node.focus(),
+    action: (node) => node.focus(),
   },
 ]
 
