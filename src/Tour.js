@@ -225,18 +225,12 @@ function Tour({
         makeCalculations(nodeRect, step.position)
       }
     } else {
-      const { width: helperWidth, height: helperHeight } = getNodeRect(
-        helper.current
-      )
       dispatch({
         type: 'NO_DOM_NODE',
         helperPosition: step.position,
         w,
         h,
         inDOM: false,
-        helperWidth,
-        helperHeight,
-        helper: helper.current,
       })
     }
 
@@ -453,11 +447,9 @@ function reducer(state, action) {
         top: state.h + 10,
         right: state.w / 2 + 9,
         bottom: state.h / 2 + 9,
-        left: action.w / 2 - action.helperWidth ? action.helperWidth / 2 : 0,
+        left: action.w / 2 - state.helperWidth ? state.helperWidth / 2 : 0,
         width: 0,
         height: 0,
-        helperWidth: action.helperWidth,
-        helperHeight: action.helperHeight,
         w: action.w,
         h: action.h,
         helperPosition: 'center',
