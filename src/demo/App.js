@@ -123,22 +123,17 @@ function MyCustomHelper({ current, content, totalSteps, gotoStep, close }) {
   )
 }
 
-const timeout = (ms) => new Promise((res) => setTimeout(res, ms))
-
 const tourConfig = [
   {
     selector: '[data-tut="reactour__iso"]',
     content:
       "Ok, let's start with the name of the Tour that is about to begin.",
-    actionBefore: async () => {
-      await timeout(5000)
-      console.log('Hola!')
-    },
   },
   {
     selector: '[data-tut="reactour__logo"]',
     content: 'And this is our cool bus...',
     position: [20, 20],
+    roundedStep: true,
   },
   {
     selector: '[data-tut="reactour__copy"]',
@@ -250,6 +245,14 @@ const tourConfig = [
       'And the Tour could be observing changes to update the view, try clicking the button…',
     observe: '[data-tut="reactour__state--observe"]',
     action: (node) => node.focus(),
+  },
+  {
+    selector: '[data-tut="reactour__highlighted"]',
+    content:
+      'Moreover you can highlight multiple elements and adjust highlighted region depending on DOM resizes and mutations. Try clicking the "?" tooltip and playing with tabs...',
+    highlightedSelectors: ['[data-tut="reactour__highlighted-absolute-child"]'],
+    mutationObservables: ['[data-tut="reactour__highlighted-absolute-child"]'],
+    resizeObservables: ['[data-tut="reactour__highlighted-absolute-child"]'],
   },
 ]
 
