@@ -382,6 +382,8 @@ class Tour extends Component {
       CustomHelper,
       disableFocusLock,
       highlightedBorder,
+      disableNextStepButton,
+      disablePrevStepButton,
     } = this.props
 
     const {
@@ -509,7 +511,7 @@ class Tour extends Component {
                               ? prevStep
                               : this.prevStep
                           }
-                          disabled={current === 0}
+                          disabled={current === 0 || disablePrevStepButton}
                           label={prevButton ? prevButton : null}
                         />
                       )}
@@ -547,7 +549,9 @@ class Tour extends Component {
                               : this.nextStep
                           }
                           disabled={
-                            !lastStepNextButton && current === steps.length - 1
+                            (!lastStepNextButton &&
+                              current === steps.length - 1) ||
+                            disableNextStepButton
                           }
                           inverted
                           label={

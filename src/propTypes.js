@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 
 export const propTypes = {
+  disableNextStepButton: PropTypes.bool,
+  disablePrevStepButton: PropTypes.bool,
   disableFocusLock: PropTypes.bool,
   badgeContent: PropTypes.func,
   highlightedMaskClassName: PropTypes.string,

@@ -268,6 +268,18 @@ export interface ReactourProps {
      * Configure accessibility related accessibility options
      */
     accessibilityOptions?: ReactourAccessibilityOptions;
+
+    /**
+     * Disable next step button
+     * @default false
+     */
+    disableNextStepButton?: boolean;
+
+    /**
+     * Disable previous step button
+     * @default false
+     */
+    disablePrevStepButton?: boolean;
 }
 
 export interface ReactourState {
