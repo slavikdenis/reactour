@@ -44,7 +44,7 @@
   "homepage": "https://github.com/slavikdenis/reactour#readme",
   "devDependencies": {
     "@babel/cli": "7.10.5",
-    "@babel/core": "7.11.0",
+    "@babel/core": "7.11.1",
     "@babel/plugin-proposal-class-properties": "7.10.4",
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
     "@babel/polyfill": "7.10.4",
@@ -53,8 +53,8 @@
     "babel-eslint": "10.1.0",
     "babel-loader": "8.1.0",
     "body-scroll-lock": "3.0.3",
-    "css-loader": "4.1.1",
-    "eslint": "7.5.0",
+    "css-loader": "4.2.1",
+    "eslint": "7.7.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.4",
     "html-loader": "1.1.0",
@@ -64,7 +64,7 @@
     "react-dom": "^16.8",
     "react-is": "^16.8",
     "rimraf": "3.0.2",
-    "rollup": "2.23.0",
+    "rollup": "2.26.3",
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-filesize": "9.0.2",
     "rollup-plugin-node-resolve": "5.2.0",
@@ -81,7 +81,7 @@
     "react-is": "^16.8"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.28",
+    "@emotion/core": "^10.0.34",
     "@emotion/styled": "^10.0.27",
     "@rooks/use-mutation-observer": "3.6.0",
     "classnames": "2.2.6",
